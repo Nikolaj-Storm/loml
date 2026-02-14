@@ -277,7 +277,7 @@
         let dots = [];
 
         // Maximum number of images to check for (you can increase this if needed)
-        const MAX_IMAGES = 200;
+        const MAX_IMAGES = 100;
         const extensions = ['jpg', 'png', 'jpeg'];
 
         // Function to check if an image exists
@@ -307,13 +307,6 @@
                         found = true;
                         break;
                     }
-                }
-                
-                // If we don't find a numbered image, stop looking
-                // (assumes images are numbered sequentially)
-                if (!found && i > 5) {
-                    // Allow gaps in the first 5, but stop if we hit several in a row
-                    break;
                 }
             }
             
