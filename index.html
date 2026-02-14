@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Valentine's Day ❤️</title>
-      <link id="favicon" rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC7SURBVDiNY/j//z8DJYCJgUIwOgCNgGJgYWAh0QB2BhasBRDYMDAw/KfUBWwMDAwsDAwM/ynVzwINYGNg+E+RfhZoABsDw39K9LNAAzgYGBgY/pOrnw3qNwaG/5ToZ4P6jYHhPyX62aB+Y2D4T4l+NqjfGBj+k6ufHRrAxsDwn1z9HFA/MjAwMPwnRT8n1I+U6OeC+pES/dxQP1Kinxfqx//E6ueD+vE/sfr5oX78T4x+AWgA/xOjXwAaQBEAAP0QShz3wnVGAAAAAElFTkSuQmCC">
-      <canvas id="fav-canvas" width="16" height="16" hidden></canvas>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
@@ -75,7 +73,8 @@
             width: 100%;
             max-width: 700px;
             margin: 0 auto;
-            aspect-ratio: 4/3;
+            height: 70vh;
+            max-height: 600px;
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 
@@ -109,7 +108,7 @@
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
         }
 
@@ -203,6 +202,8 @@
 
             .carousel-container {
                 border-radius: 16px;
+                height: 60vh;
+                max-height: 500px;
             }
 
             .carousel-nav {
@@ -249,35 +250,66 @@
         
         <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack">
-                <!-- Add your images here. Replace the src with your image URLs -->
-                <!-- Example: <div class="carousel-slide"><img src="image1.jpg" alt="Memory 1"></div> -->
-                
-                <!-- Placeholder slides - replace with your images -->
-                <div class="carousel-slide" data-number="1"></div>
-                <div class="carousel-slide" data-number="2"></div>
-                <div class="carousel-slide" data-number="3"></div>
-                <div class="carousel-slide" data-number="4"></div>
-                <div class="carousel-slide" data-number="5"></div>
-                <div class="carousel-slide" data-number="6"></div>
-                <div class="carousel-slide" data-number="7"></div>
-                <div class="carousel-slide" data-number="8"></div>
-                <div class="carousel-slide" data-number="9"></div>
-                <div class="carousel-slide" data-number="10"></div>
-                <div class="carousel-slide" data-number="11"></div>
-                <div class="carousel-slide" data-number="12"></div>
-                <div class="carousel-slide" data-number="13"></div>
-                <div class="carousel-slide" data-number="14"></div>
-                <div class="carousel-slide" data-number="15"></div>
-                <div class="carousel-slide" data-number="16"></div>
-                <div class="carousel-slide" data-number="17"></div>
-                <div class="carousel-slide" data-number="18"></div>
-                <div class="carousel-slide" data-number="19"></div>
-                <div class="carousel-slide" data-number="20"></div>
-                <div class="carousel-slide" data-number="21"></div>
-                <div class="carousel-slide" data-number="22"></div>
-                <div class="carousel-slide" data-number="23"></div>
-                <div class="carousel-slide" data-number="24"></div>
-                <div class="carousel-slide" data-number="25"></div>
+                <!-- Photos from the photos folder -->
+                <div class="carousel-slide"><img src="photos/1.jpg" alt="Memory 1"></div>
+                <div class="carousel-slide"><img src="photos/2.jpg" alt="Memory 2"></div>
+                <div class="carousel-slide"><img src="photos/3.jpg" alt="Memory 3"></div>
+                <div class="carousel-slide"><img src="photos/4.jpg" alt="Memory 4"></div>
+                <div class="carousel-slide"><img src="photos/5.jpg" alt="Memory 5"></div>
+                <div class="carousel-slide"><img src="photos/6.jpg" alt="Memory 6"></div>
+                <div class="carousel-slide"><img src="photos/7.jpg" alt="Memory 7"></div>
+                <div class="carousel-slide"><img src="photos/8.jpg" alt="Memory 8"></div>
+                <div class="carousel-slide"><img src="photos/9.jpg" alt="Memory 9"></div>
+                <div class="carousel-slide"><img src="photos/10.jpg" alt="Memory 10"></div>
+                <div class="carousel-slide"><img src="photos/11.jpg" alt="Memory 11"></div>
+                <div class="carousel-slide"><img src="photos/12.jpg" alt="Memory 12"></div>
+                <div class="carousel-slide"><img src="photos/13.jpg" alt="Memory 13"></div>
+                <div class="carousel-slide"><img src="photos/14.jpg" alt="Memory 14"></div>
+                <div class="carousel-slide"><img src="photos/15.jpg" alt="Memory 15"></div>
+                <div class="carousel-slide"><img src="photos/16.jpg" alt="Memory 16"></div>
+                <div class="carousel-slide"><img src="photos/17.jpg" alt="Memory 17"></div>
+                <div class="carousel-slide"><img src="photos/18.jpg" alt="Memory 18"></div>
+                <div class="carousel-slide"><img src="photos/19.jpg" alt="Memory 19"></div>
+                <div class="carousel-slide"><img src="photos/20.jpg" alt="Memory 20"></div>
+                <div class="carousel-slide"><img src="photos/21.jpg" alt="Memory 21"></div>
+                <div class="carousel-slide"><img src="photos/22.jpg" alt="Memory 22"></div>
+                <div class="carousel-slide"><img src="photos/23.jpg" alt="Memory 23"></div>
+                <div class="carousel-slide"><img src="photos/24.jpg" alt="Memory 24"></div>
+                <div class="carousel-slide"><img src="photos/25.jpg" alt="Memory 25"></div>
+                <div class="carousel-slide"><img src="photos/26.jpg" alt="Memory 26"></div>
+                <div class="carousel-slide"><img src="photos/27.jpg" alt="Memory 27"></div>
+                <div class="carousel-slide"><img src="photos/28.jpg" alt="Memory 28"></div>
+                <div class="carousel-slide"><img src="photos/29.jpg" alt="Memory 29"></div>
+                <div class="carousel-slide"><img src="photos/30.jpg" alt="Memory 30"></div>
+                <div class="carousel-slide"><img src="photos/31.jpg" alt="Memory 31"></div>
+                <div class="carousel-slide"><img src="photos/32.jpg" alt="Memory 32"></div>
+                <div class="carousel-slide"><img src="photos/33.jpg" alt="Memory 33"></div>
+                <div class="carousel-slide"><img src="photos/34.jpg" alt="Memory 34"></div>
+                <div class="carousel-slide"><img src="photos/35.jpg" alt="Memory 35"></div>
+                <div class="carousel-slide"><img src="photos/36.jpg" alt="Memory 36"></div>
+                <div class="carousel-slide"><img src="photos/37.jpg" alt="Memory 37"></div>
+                <div class="carousel-slide"><img src="photos/38.jpg" alt="Memory 38"></div>
+                <div class="carousel-slide"><img src="photos/39.jpg" alt="Memory 39"></div>
+                <div class="carousel-slide"><img src="photos/40.jpg" alt="Memory 40"></div>
+                <div class="carousel-slide"><img src="photos/41.jpg" alt="Memory 41"></div>
+                <div class="carousel-slide"><img src="photos/42.jpg" alt="Memory 42"></div>
+                <div class="carousel-slide"><img src="photos/43.jpg" alt="Memory 43"></div>
+                <div class="carousel-slide"><img src="photos/44.jpg" alt="Memory 44"></div>
+                <div class="carousel-slide"><img src="photos/45.jpg" alt="Memory 45"></div>
+                <div class="carousel-slide"><img src="photos/46.jpg" alt="Memory 46"></div>
+                <div class="carousel-slide"><img src="photos/47.jpg" alt="Memory 47"></div>
+                <div class="carousel-slide"><img src="photos/48.jpg" alt="Memory 48"></div>
+                <div class="carousel-slide"><img src="photos/49.jpg" alt="Memory 49"></div>
+                <div class="carousel-slide"><img src="photos/50.jpg" alt="Memory 50"></div>
+                <div class="carousel-slide"><img src="photos/51.jpg" alt="Memory 51"></div>
+                <div class="carousel-slide"><img src="photos/52.jpg" alt="Memory 52"></div>
+                <div class="carousel-slide"><img src="photos/53.jpg" alt="Memory 53"></div>
+                <div class="carousel-slide"><img src="photos/54.jpg" alt="Memory 54"></div>
+                <div class="carousel-slide"><img src="photos/55.jpg" alt="Memory 55"></div>
+                <div class="carousel-slide"><img src="photos/56.jpg" alt="Memory 56"></div>
+                <div class="carousel-slide"><img src="photos/57.jpg" alt="Memory 57"></div>
+                <div class="carousel-slide"><img src="photos/58.jpg" alt="Memory 58"></div>
+                <div class="carousel-slide"><img src="photos/59.jpg" alt="Memory 59"></div>
             </div>
 
             <button class="carousel-nav prev" onclick="moveSlide(-1)">‹</button>
@@ -390,42 +422,6 @@
             if (e.key === 'ArrowLeft') moveSlide(-1);
             if (e.key === 'ArrowRight') moveSlide(1);
         });
-
-          // Animated favicon
-  const canvas = document.getElementById("fav-canvas");
-  const ctx = canvas.getContext("2d");
-  const favicon = document.getElementById("favicon");
-
-  let t = 0;
-
-  function drawHeart(scale) {
-    ctx.clearRect(0,0,16,16);
-    ctx.save();
-    ctx.translate(8,8);
-    ctx.scale(scale, scale);
-    ctx.translate(-8,-8);
-
-    ctx.fillStyle = "#d60000";
-    ctx.beginPath();
-    ctx.moveTo(8,13);
-    ctx.bezierCurveTo(2,9,2,4,5,4);
-    ctx.bezierCurveTo(7,4,8,6,8,6);
-    ctx.bezierCurveTo(8,6,9,4,11,4);
-    ctx.bezierCurveTo(14,4,14,9,8,13);
-    ctx.fill();
-
-    ctx.restore();
-  }
-
-  function animate() {
-    const scale = 1 + 0.12 * Math.sin(t);
-    drawHeart(scale);
-    favicon.href = canvas.toDataURL("image/png");
-    t += 0.2;
-    requestAnimationFrame(animate);
-  }
-
-  animate();
     </script>
 </body>
 </html>
