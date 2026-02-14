@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Valentine's Day ❤️</title>
+      <link id="favicon" rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC7SURBVDiNY/j//z8DJYCJgUIwOgCNgGJgYWAh0QB2BhasBRDYMDAw/KfUBWwMDAwsDAwM/ynVzwINYGNg+E+RfhZoABsDw39K9LNAAzgYGBgY/pOrnw3qNwaG/5ToZ4P6jYHhPyX62aB+Y2D4T4l+NqjfGBj+k6ufHRrAxsDwn1z9HFA/MjAwMPwnRT8n1I+U6OeC+pES/dxQP1Kinxfqx//E6ueD+vE/sfr5oX78T4x+AWgA/xOjXwAaQBEAAP0QShz3wnVGAAAAAElFTkSuQmCC">
+      <canvas id="fav-canvas" width="16" height="16" hidden></canvas>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
@@ -388,6 +390,42 @@
             if (e.key === 'ArrowLeft') moveSlide(-1);
             if (e.key === 'ArrowRight') moveSlide(1);
         });
+
+          // Animated favicon
+  const canvas = document.getElementById("fav-canvas");
+  const ctx = canvas.getContext("2d");
+  const favicon = document.getElementById("favicon");
+
+  let t = 0;
+
+  function drawHeart(scale) {
+    ctx.clearRect(0,0,16,16);
+    ctx.save();
+    ctx.translate(8,8);
+    ctx.scale(scale, scale);
+    ctx.translate(-8,-8);
+
+    ctx.fillStyle = "#d60000";
+    ctx.beginPath();
+    ctx.moveTo(8,13);
+    ctx.bezierCurveTo(2,9,2,4,5,4);
+    ctx.bezierCurveTo(7,4,8,6,8,6);
+    ctx.bezierCurveTo(8,6,9,4,11,4);
+    ctx.bezierCurveTo(14,4,14,9,8,13);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function animate() {
+    const scale = 1 + 0.12 * Math.sin(t);
+    drawHeart(scale);
+    favicon.href = canvas.toDataURL("image/png");
+    t += 0.2;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
     </script>
 </body>
 </html>
