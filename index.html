@@ -276,9 +276,9 @@
         let totalSlides = 0;
         let dots = [];
 
-        // Maximum number of images to check for (you can increase this if needed)
-        const MAX_IMAGES = 100;
-        const extensions = ['jpg', 'png', 'jpeg'];
+        // Maximum number of images to check for
+        const MAX_IMAGES = 60;
+        const extensions = ['png']; // Only check .png since we know all photos are .png
 
         // Function to check if an image exists
         async function checkImageExists(url) {
