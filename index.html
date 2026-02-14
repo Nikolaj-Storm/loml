@@ -333,6 +333,38 @@
         const dotsContainer = document.getElementById('dotsContainer');
         let autoplayInterval;
 
+        // Check if image exists and try alternative extension
+        function tryLoadImage(img, baseUrl, number) {
+            const extensions = ['jpg', 'png', 'jpeg'];
+            let currentExtIndex = 0;
+
+            function tryNext() {
+                if (currentExtIndex < extensions.length) {
+                    const url = `${baseUrl}${number}.${extensions[currentExtIndex]}`;
+                    img.src = url;
+                    currentExtIndex++;
+                } else {
+                    // If all extensions fail, show placeholder
+                    img.style.display = 'none';
+                }
+            }
+
+            img.onerror = function() {
+                tryNext();
+            };
+
+            // Start trying
+            tryNext();
+        }
+
+        // Load images with automatic extension detection
+        slides.forEach((slide, index) => {
+            const img = slide.querySelector('img');
+            if (img) {
+                tryLoadImage(img, 'photos/', index + 1);
+            }
+        });
+
         // Create dots
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('div');
@@ -422,6 +454,42 @@
             if (e.key === 'ArrowLeft') moveSlide(-1);
             if (e.key === 'ArrowRight') moveSlide(1);
         });
+
+        // Animated favicon
+        const canvas = document.getElementById("fav-canvas");
+        const ctx = canvas.getContext("2d");
+        const favicon = document.getElementById("favicon");
+
+        let t = 0;
+
+        function drawHeart(scale) {
+            ctx.clearRect(0,0,16,16);
+            ctx.save();
+            ctx.translate(8,8);
+            ctx.scale(scale, scale);
+            ctx.translate(-8,-8);
+
+            ctx.fillStyle = "#d60000";
+            ctx.beginPath();
+            ctx.moveTo(8,13);
+            ctx.bezierCurveTo(2,9,2,4,5,4);
+            ctx.bezierCurveTo(7,4,8,6,8,6);
+            ctx.bezierCurveTo(8,6,9,4,11,4);
+            ctx.bezierCurveTo(14,4,14,9,8,13);
+            ctx.fill();
+
+            ctx.restore();
+        }
+
+        function animateFavicon() {
+            const scale = 1 + 0.12 * Math.sin(t);
+            drawHeart(scale);
+            favicon.href = canvas.toDataURL("image/png");
+            t += 0.2;
+            requestAnimationFrame(animateFavicon);
+        }
+
+        animateFavicon();
     </script>
 </body>
 </html>
